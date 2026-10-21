@@ -6,10 +6,12 @@
 
 **A curated index of top-tier frontend build tools, next-generation bundlers, ultra-fast compilers, dev servers, and cloud build platforms.**
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+<a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-EE2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+[![Awesome](https://awesome.re/badge.svg)](https://github.com/ishandutta2007/Awesome-Awesome-Awesome)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/ishandutta2007/Awesome-Frontend-Build-Tools/pulls)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/ishandutta2007/Awesome-Frontend-Build-Tools/graphs/commit-activity)
+<a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
 
 *Comprehensive insights into module bundling, Hot Module Replacement (HMR), Rust/Go toolchains, tree-shaking, and enterprise CI/CD orchestration.*
 
@@ -26,6 +28,8 @@
   - [🏛️ Historical & Discontinued Tools](#️-historical--discontinued-tools)
 - [🧭 Decision Matrix & Tool Selection](#-decision-matrix--tool-selection)
 - [🤝 How to Contribute](#-how-to-contribute)
+- [💖 Support](#-support)
+- [⭐ Star History](#star-history)
 - [⚖️ Disclaimer & License](#️-disclaimer--license)
 
 ---
@@ -177,6 +181,30 @@ Contributions are welcome! Help keep this curated list accurate and up to date:
 2. 🌿 **Create a new branch**: `git checkout -b feature/add-new-tool`.
 3. 📝 **Add or update entries**: Follow the established formatting (include links, star count badge, licensing, and specific pricing/limits for SaaS).
 4. 🚀 **Submit a Pull Request** with a concise explanation of your additions.
+
+---
+
+## 💖 Support
+
+Thank you for exploring **Awesome Frontend Build Tools**! If this repository has helped you discover tools, speed up your build pipelines, or improve your developer workflow, please consider supporting the project:
+
+- ⭐ **Star** this repository to make it more visible to the community.
+- 🍴 **Fork and share** it with your developer friends, teams, and colleagues.
+- ☕ **Buy me a coffee / Sponsor**: Support the maintenance of open-source resources and developer tooling guides on the [GitHub Sponsors Dashboard](https://github.com/sponsors/ishandutta2007).
+
+<div align="center">
+
+<a href="https://github.com/sponsors/ishandutta2007">
+  <img src="https://img.shields.io/badge/Sponsor%20on%20GitHub-EA4AAA?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Sponsor on GitHub" />
+</a>
+
+</div>
+
+---
+
+##  Star History
+
+[![Star History Chart](https://star-history.dera.page/svg?repos=ishandutta2007/Awesome-Frontend-Build-Tools&type=date&legend=top-left)](https://star-history.dera.page/#ishandutta2007/Awesome-Frontend-Build-Tools&type=date&legend=top-left)
 
 ---
 
