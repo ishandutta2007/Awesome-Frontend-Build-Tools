@@ -1,187 +1,187 @@
-# Awesome-Frontend-Build-Tools
+<div align="center">
 
-## Top Frontend Build Tools Ecosystem
+<img src="./assets/banner.svg" alt="Awesome Frontend Build Tools Banner" width="100%" />
 
+# ⚡ Awesome Frontend Build Tools
 
+**A curated index of top-tier frontend build tools, next-generation bundlers, ultra-fast compilers, dev servers, and cloud build platforms.**
 
-**Curated List of SaaS Products & Open-Source GitHub Projects**  
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/ishandutta2007/Awesome-Frontend-Build-Tools/pulls)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/ishandutta2007/Awesome-Frontend-Build-Tools/graphs/commit-activity)
 
-*Focused on Module Bundling, Dev Server Speed & Modern Toolchain Orchestration*  
-
-**Last updated: October 2026**
-
-
-
-This repository tracks notable **SaaS platforms** and **open-source projects** for **Frontend Build Tools**. These tools transform source code—JavaScript, TypeScript, CSS, assets—into optimized bundles for the browser, while providing development servers with hot module replacement (HMR) that make the inner loop feel instant.
-
-
-
-**Examples** include Webpack, Vite, Rollup, Parcel, Turbopack, esbuild, Snowpack, Gulp, Grunt, and Browserify (the category leaders).
-
-
-
-**Open-source emphasis**: This section is heavily expanded with every major active project for self-hosting, custom plugin development, and transparent build pipelines—ideal for frontend engineers, library authors, and teams migrating from legacy toolchains. The open-source landscape is anchored by **Vite** (the new default for application development, now Rolldown-powered in v8), **Webpack** (the industry standard for complex legacy builds with 84%+ market share), **Rollup** (the library bundling standard), and **esbuild** (the Go-based speed engine underpinning much of the ecosystem), with **Turbopack** serving Next.js users and **Parcel** offering zero-config convenience. Note: **Snowpack** is no longer maintained and should only be referenced for historical context .
-
-
-
-Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
-
-
-
-## Table of Contents
-
-- [SaaS/Hosted Platforms](#saas-hosted-platforms)
-
-- [Open-Source GitHub Projects](#open-source-github-projects)
-
-- [How to Contribute](#how-to-contribute)
-
-- [Disclaimer](#disclaimer)
-
-
-
-## SaaS/Hosted Platforms
-
-
-
-- **[Vercel (Turbopack Integration)](https://vercel.com/)**  
-
-  Hosting platform that provides first-class support for Next.js and its native bundler, Turbopack. Deployment pipelines automatically leverage Turbopack's incremental compilation for faster builds. SaaS hosting with free tier; proprietary platform.
-
-
-
-- **[Netlify](https://www.netlify.com/)**  
-
-  Deployment platform with build pipeline integration for Vite, Webpack, and other frontend build tools. Provides build caching and edge deployment, though the build tools themselves remain open-source and self-hostable.
-
-
-
-- **[Cloudflare Pages](https://pages.cloudflare.com/)**  
-
-  Static site hosting with build integration for Vite, Webpack, and framework presets. Offers generous free tier and edge deployment, with build logs and preview deployments.
-
-
-
-- **[GitHub Actions](https://github.com/features/actions)**  
-
-  CI/CD platform commonly used to run frontend build pipelines (Vite, Webpack, Rollup) in the cloud. Not a build tool itself, but the hosted execution environment for many production builds.
-
-
-
-## Open-Source GitHub Projects
-
-
-
-- **[Vite](https://github.com/vitejs/vite)**  
-
-  The new default for frontend application development. **Architecture shift in v8**: Vite 8 (March 2026) replaced the dual-bundler approach (esbuild for dev, Rollup for production) with **Rolldown**, a Rust-based bundler 10–30x faster than Rollup, matching esbuild's performance . Native ESM dev server with instant HMR. Real-world impact: Linear's production builds dropped from 46s to 6s; Beehiiv saw 64% reduction . MIT licensed. Best for new application projects across React, Vue, Svelte, and most modern frameworks.
-
-
-
-- **[Webpack](https://github.com/webpack/webpack)**  
-
-  The industry standard for complex frontend builds, with **84.63% market share** among JS build tools . Unmatched loader and plugin ecosystem, Module Federation for micro-frontends, and deep customization. **2026 roadmap** includes native HTML entry point support, runtime-agnostic architecture (Node, Deno, Bun, web), and consolidated minimizer plugins . MIT licensed. Best for large legacy applications where migration cost outweighs modernization benefits.
-
-
-
-- **[Rollup](https://github.com/rollup/rollup)**  
-
-  The library bundling standard. Outputs the cleanest ESM artifacts, pioneered tree-shaking, and powers Vite's production builds (pre-v8) and tools like tsup. Plugin API remains the foundation for Vite 8's Rolldown compatibility . MIT licensed. Best for publishing npm libraries where output quality and tree-shakeability matter most.
-
-
-
-- **[esbuild](https://github.com/evanw/esbuild)**  
-
-  The Go-based speed engine that redefined build performance. Extremely fast TypeScript/JSX compilation and bundling, with a limited but sufficient plugin system. Increasingly **invisible infrastructure**: it powers Vite's dependency pre-bundling, tsx, and many other tools . MIT licensed. Best for pure speed scenarios (simple bundling, backend scripts) or as an embedded engine.
-
-
-
-- **[Parcel](https://github.com/parcel-bundler/parcel)**  
-
-  Zero-configuration bundler that automatically handles dependencies, transforms, and multi-format output. Uses SWC for performance, putting it in the first tier alongside Vite and esbuild . MIT licensed. Best for prototypes, small projects, and teams that want to avoid configuration entirely.
-
-
-
-- **[Turbopack](https://github.com/vercel/turbo)**  
-
-  Vercel's Rust-based bundler, the default for Next.js. Excels at **incremental compilation** with function-level caching, making HMR faster than Vite for large projects . **Known gaps**: does not support webpack plugins (loaders are supported), CSS Module ordering follows JS import order strictly, and Sass `~` tilde imports are unsupported . MIT licensed. Best for Next.js projects and teams already in Vercel's ecosystem.
-
-
-
-- **[Rspack](https://github.com/web-infra-dev/rspack)**  
-
-  Rust-based bundler with **Webpack API compatibility** as its primary migration path. Designed for teams with complex Webpack configurations that want faster builds without rewriting loaders and plugins. Loader/plugin behavior must be verified per-project . MIT licensed. Best for large Webpack applications seeking a drop-in performance upgrade.
-
-
-
-- **[Gulp](https://github.com/gulpjs/gulp)**  
-
-  Streaming task runner, stable but niche. Useful for non-JS file processing pipelines (image optimization, CSS preprocessing) that npm scripts cannot handle cleanly . Often paired with a bundler like Webpack or Vite rather than used alone for application builds. MIT licensed.
-
-
-
-- **[Grunt](https://github.com/gruntjs/grunt)**  
-
-  Legacy task runner with a configuration-heavy JSON-like setup. Plugin ecosystem is stagnant; still used in some enterprise environments but **not recommended for new projects** . MIT licensed. Historical relevance only.
-
-
-
-- **[Browserify](https://github.com/browserify/browserify)**  
-
-  The pioneer that brought CommonJS `require()` to the browser. Lacks native ES module support and requires shims for modern code. **Legacy tool**; only appropriate for maintaining small, old scripts . MIT licensed.
-
-
-
-### Additional Strong Open-Source Options
-
-
-
-- **Snowpack** — **No longer maintained**. Once a Vite competitor for native ESM dev servers, now only relevant for understanding historical architecture . Do not select for new projects.
-
-- **WMR** — Preact's bundler, **also discontinued** and recommends Vite instead .
-
-- **tsup** — Wrapper around esbuild for library bundling, offering a simpler API than raw esbuild. Built on the esbuild engine.
-
-- **Frameworks for building custom systems**: For **application development**, start with **Vite** (or **Turbopack** if Next.js). For **library publishing**, use **Rollup** or **tsup**. For **legacy Webpack migration**, evaluate **Rspack** for a performance lift without full rewrite. Use **esbuild** directly for simple scripts and backend bundling. Pair **Gulp** with a bundler only if you have specific non-JS asset pipelines.
-
-
-
-## How to Contribute
-
-
-
-1. Fork the repo.
-
-2. Add/edit entries in `README.md` (follow existing format).
-
-3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-
-4. Submit PR with a short explanation.
-
-
-
-Star the repo if you find it useful!
-
-
-
-## Disclaimer
-
-
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-
-- Tool choice depends heavily on project type: applications vs. libraries, greenfield vs. legacy, framework constraints (Next.js → Turbopack), and team familiarity.
-
-- Vite 8's Rolldown migration changes internal behavior; plugins relying on Vite 7's esbuild/Rollup internals may require updates .
-
-- Snowpack and WMR are discontinued; Turbopack does not support webpack plugins, which may block migration for some projects .
-
-
+*Comprehensive insights into module bundling, Hot Module Replacement (HMR), Rust/Go toolchains, tree-shaking, and enterprise CI/CD orchestration.*
 
 ---
 
+</div>
 
+## 📑 Table of Contents
 
-**Made for frontend engineers, library authors, DevEx teams, and anyone who cares about build speed and toolchain clarity.**  
+- [🌐 Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
+- [☁️ SaaS & Hosted Build Platforms](#️-saas--hosted-build-platforms)
+- [📦 Open-Source GitHub Projects](#-open-source-github-projects)
+  - [⭐ Ranked by GitHub Stars](#-ranked-by-github-stars)
+  - [🏛️ Historical & Discontinued Tools](#️-historical--discontinued-tools)
+- [🧭 Decision Matrix & Tool Selection](#-decision-matrix--tool-selection)
+- [🤝 How to Contribute](#-how-to-contribute)
+- [⚖️ Disclaimer & License](#️-disclaimer--license)
 
-Let's make frontend builds more open, faster, and understandable.
+---
+
+## 🌐 Sector Overview & Market Dynamics
+
+The global frontend build tooling, web development infrastructure, and edge deployment platform sector is estimated at **$18.5 Billion** (projected to exceed $45 Billion by 2032 with an ~18.8% CAGR), propelled by escalating web application complexity, TypeScript adoption, and micro-frontend architectures. 
+
+The sector exhibits a **bifurcated market structure**:
+- **Hosting & Cloud Orchestration (Concentrated)**: Moderately concentrated with high winner-take-most dynamics dominated by hyperscalers and edge platforms (Microsoft/GitHub, Amazon AWS, Cloudflare, and Vercel) that monetize compute, serverless invocations, and global edge CDNs.
+- **Open-Source Bundler & Compiler Engines (Highly Fragmented & Shifting)**: Highly fragmented and intensely competitive. While legacy giants like Webpack still power the majority of enterprise production codebases (~84% historical footprint), a massive architectural migration toward native-code compilers (Rust, Go, Zig) led by Vite, Turbopack, esbuild, SWC, Rspack, and Rolldown is redefining baseline developer experience with sub-second builds and instant HMR.
+
+---
+
+## ☁️ SaaS & Hosted Build Platforms
+
+The table below outlines leading commercial SaaS solutions and hosted pipeline platforms powering continuous integration, automated frontend builds, and instant global deployments. Sorted by **Company Valuation / Revenue (Descending)**.
+
+| Platform / Service | Primary Capabilities & Toolchain Integration | Starting Tier Pricing | Free Tier Limits | Company Valuation / Revenue |
+| :--- | :--- | :--- | :--- | :--- |
+| **[GitHub Actions](https://github.com/features/actions)** | Native CI/CD orchestration; cloud runner environments for Vite, Webpack, Rollup, and Dockerized multi-stage asset workflows. | **$4.00 / user / month** *(GitHub Team)* | **2,000 build mins / month** (private repos; unlimited for public), 500 MB package storage, 1 concurrent Windows/macOS runner | **$3.1 Trillion** *(Microsoft Valuation / ~$1B+ GitHub ARR)* |
+| **[AWS Amplify](https://aws.amazon.com/amplify/)** | Fullstack web hosting & git-driven continuous delivery for Next.js, Vite, and React with serverless backend integrations. | **$0.01 / build minute** *(Pay-as-you-go; + $0.023/GB storage)* | **1,000 build mins / month** for 12 months, 5 GB storage, 15 GB bandwidth served / month | **$2.1 Trillion** *(Amazon Valuation / $105B+ AWS ARR)* |
+| **[Cloudflare Pages](https://pages.cloudflare.com/)** | Edge-native static & JAMstack hosting with automatic Git builds for Vite, Webpack, and Astro across Cloudflare's global anycast network. | **$5.00 / month** *(Cloudflare Workers / Pages Paid)* | **500 builds / month**, 1 concurrent build, unlimited bandwidth, unlimited preview URLs, 100 custom domains | **$32 Billion** *(NYSE: NET Market Cap / ~$1.6B ARR)* |
+| **[Vercel](https://vercel.com/)** | Frontend cloud platform providing first-class Turbopack & Next.js integration, incremental compilation, and edge compute delivery. | **$20.00 / user / month** *(Vercel Pro)* | **6,000 build mins / month**, 1 concurrent build, 100 GB bandwidth / month, non-commercial personal projects only | **$3.25 Billion** *(Series E Valuation / ~$100M+ ARR)* |
+| **[Netlify](https://www.netlify.com/)** | Composable web platform offering automated continuous deployments, build caching plugins for Vite/Webpack, and edge routing. | **$19.00 / member / month** *(Netlify Pro, billed annually)* | **300 build mins / month**, 1 concurrent build, 100 GB bandwidth / month, 100 form submissions / month | **$2.0 Billion** *(Series D Valuation / ~$60M+ ARR)* |
+
+---
+
+## 📦 Open-Source GitHub Projects
+
+Explore the leading open-source frontend build engines, bundlers, and compilation ecosystems.
+
+### ⭐ Ranked by GitHub Stars
+
+Sorted strictly in descending order of GitHub community stars.
+
+1. **[Bun](https://github.com/oven-sh/bun)** [![GitHub stars](https://img.shields.io/github/stars/oven-sh/bun?style=social&color=white)](https://github.com/oven-sh/bun/stargazers)  
+   🚀 *All-in-one JavaScript runtime, native bundler, transpiler, and package manager written in Zig.*  
+   Bun provides an integrated standalone bundler (`bun build`) with extreme speed, parsing and packaging JavaScript, TypeScript, and JSX without requiring external compilation steps. Best for zero-setup execution, ultra-fast script bundling, and server-side SSR packaging.  
+   `License: MIT`
+
+2. **[Vite](https://github.com/vitejs/vite)** [![GitHub stars](https://img.shields.io/github/stars/vitejs/vite?style=social&color=white)](https://github.com/vitejs/vite/stargazers)  
+   ⚡ *Next-generation frontend tooling offering instant dev server start and lightning-fast HMR.*  
+   Vite powers the vast majority of modern Vue, React, and Svelte applications. **Architecture Update**: Vite 8 transitions its core production engine to **Rolldown** (Rust-based bundler), consolidating the historical dual-bundler split (esbuild dev + Rollup prod) into a unified, high-performance pipeline with 10–30x build speed gains.  
+   `License: MIT`
+
+3. **[Webpack](https://github.com/webpack/webpack)** [![GitHub stars](https://img.shields.io/github/stars/webpack/webpack?style=social&color=white)](https://github.com/webpack/webpack/stargazers)  
+   📦 *The foundational enterprise module bundler with an unmatched loader and plugin ecosystem.*  
+   Webpack remains the battle-tested backbone of enterprise software with deep support for Module Federation (micro-frontends), advanced code-splitting, asset pipelines, and legacy browser shims. The roadmap targets native HTML entry points, unified minification, and runtime-agnostic execution across Node, Deno, and Bun.  
+   `License: MIT`
+
+4. **[Babel](https://github.com/babel/babel)** [![GitHub stars](https://img.shields.io/github/stars/babel/babel?style=social&color=white)](https://github.com/babel/babel/stargazers)  
+   🔄 *The compiler for next-generation ECMAScript and JSX transpilation.*  
+   Babel revolutionized JavaScript by enabling developers to use modern language syntax and experimental TC39 proposals through transform plugins and polyfill strategies (`core-js`). While native compilers (SWC/esbuild) now handle standard compilation, Babel remains indispensable for complex custom AST transformations and macro pipelines.  
+   `License: MIT`
+
+5. **[Parcel](https://github.com/parcel-bundler/parcel)** [![GitHub stars](https://img.shields.io/github/stars/parcel-bundler/parcel?style=social&color=white)](https://github.com/parcel-bundler/parcel/stargazers)  
+   🎁 *Zero-configuration build tool and bundler for web applications.*  
+   Parcel handles HTML, CSS, JavaScript, WebAssembly, images, and fonts automatically without configuration boilerplate. Powered by a Rust-based compiler engine (SWC) and multi-threaded architecture, Parcel excels at rapid prototyping, educational projects, and greenfield applications.  
+   `License: MIT`
+
+6. **[esbuild](https://github.com/evanw/esbuild)** [![GitHub stars](https://img.shields.io/github/stars/evanw/esbuild?style=social&color=white)](https://github.com/evanw/esbuild/stargazers)  
+   🏎️ *An extremely fast Go-based JavaScript/TypeScript bundler and minifier.*  
+   Written from scratch in Go with parallelized parsing and code-generation, esbuild redefined ecosystem speed expectations (10x–100x faster than legacy bundlers). It serves as critical infrastructure powering dependency pre-bundling in Vite, `tsup`, `tsx`, and cloud serverless packagers.  
+   `License: MIT`
+
+7. **[SWC](https://github.com/swc-project/swc)** [![GitHub stars](https://img.shields.io/github/stars/swc-project/swc?style=social&color=white)](https://github.com/swc-project/swc/stargazers)  
+   🦀 *Rust-based platform for the web providing ultra-fast compilation and bundling.*  
+   SWC (Speedy Web Compiler) offers a 20x speedup over Babel on single-thread execution and 70x on multi-core architectures. It serves as the primary code-transformation engine underpinning Next.js, Parcel, and Deno.  
+   `License: Apache-2.0`
+
+8. **[Gulp](https://github.com/gulpjs/gulp)** [![GitHub stars](https://img.shields.io/github/stars/gulpjs/gulp?style=social&color=white)](https://github.com/gulpjs/gulp/stargazers)  
+   🌊 *Streaming task runner leveraging Node.js streams for file transformation workflows.*  
+   Gulp excels at programmatic multi-step pipelines: optimizing SVG sprite atlases, compiling legacy Sass stylesheets, processing static documentation, and orchestrating deployment steps where pure module bundlers are unsuitable.  
+   `License: MIT`
+
+9. **[Turbopack](https://github.com/vercel/turbo)** [![GitHub stars](https://img.shields.io/github/stars/vercel/turbo?style=social&color=white)](https://github.com/vercel/turbo/stargazers)  
+   ⚡ *Incremental Rust bundler designed as the successor to Webpack by Vercel.*  
+   Turbopack uses the Turbo engine for function-level caching and incremental computation. Built into Next.js as the default development bundler, it provides near-instant HMR updates that scale independently of application size.  
+   `License: MIT`
+
+10. **[Rollup](https://github.com/rollup/rollup)** [![GitHub stars](https://img.shields.io/github/stars/rollup/rollup?style=social&color=white)](https://github.com/rollup/rollup/stargazers)  
+    📜 *The standard module bundler for JavaScript libraries and ES modules.*  
+    Rollup popularized static tree-shaking and produces clean, minimalist ESM/CJS bundles. It remains the default choice for publishing npm packages and authored the plugin architecture that serves as the blueprint for Vite and Rolldown.  
+    `License: MIT`
+
+11. **[Biome](https://github.com/biomejs/biome)** [![GitHub stars](https://img.shields.io/github/stars/biomejs/biome?style=social&color=white)](https://github.com/biomejs/biome/stargazers)  
+    🌿 *High-performance Rust toolchain for formatting, linting, and web asset orchestration.*  
+    Born as a fork of Rome, Biome is a single binary that unifies formatting (Prettier alternative) and linting (ESLint alternative) with 25x–35x speed improvements. While primarily a linter/formatter today, its AST compiler foundation is expanding toward complete toolchain unification.  
+    `License: MIT / Apache-2.0`
+
+12. **[Browserify](https://github.com/browserify/browserify)** [![GitHub stars](https://img.shields.io/github/stars/browserify/browserify?style=social&color=white)](https://github.com/browserify/browserify/stargazers)  
+    🌐 *The pioneer that enabled Node.js-style `require()` modules in browser runtimes.*  
+    Browserify introduced module packaging to modern web development by bundling CommonJS code and polyfilling Node core modules. Maintained for backward compatibility and legacy systems.  
+    `License: MIT`
+
+13. **[Rolldown](https://github.com/rolldown/rolldown)** [![GitHub stars](https://img.shields.io/github/stars/rolldown/rolldown?style=social&color=white)](https://github.com/rolldown/rolldown/stargazers)  
+    ⚙️ *Fast Rust-based bundler with Rollup-compatible plugin APIs, designed as the core engine for Vite.*  
+    Developed under the VoidZero and Vite organization, Rolldown combines the raw speed of esbuild with Rollup's advanced code-splitting and plugin API compatibility, unifying the future of web bundling.  
+    `License: MIT`
+
+14. **[Rspack](https://github.com/web-infra-dev/rspack)** [![GitHub stars](https://img.shields.io/github/stars/web-infra-dev/rspack?style=social&color=white)](https://github.com/web-infra-dev/rspack/stargazers)  
+    🦀 *High-performance Rust bundler designed as a drop-in replacement for Webpack.*  
+    Engineered by ByteDance's Web Infra team, Rspack offers 5x–10x faster cold builds and instant HMR while maintaining seamless compatibility with existing Webpack plugins, loaders, and Module Federation configs.  
+    `License: Apache-2.0`
+
+15. **[Grunt](https://github.com/gruntjs/grunt)** [![GitHub stars](https://img.shields.io/github/stars/gruntjs/grunt?style=social&color=white)](https://github.com/gruntjs/grunt/stargazers)  
+    🛠️ *The early JavaScript task runner with file-based configuration.*  
+    Grunt pioneered automated frontend workflows in the pre-Webpack era. Preserved for historical reference and legacy enterprise maintenance.  
+    `License: MIT`
+
+16. **[tsup](https://github.com/egoist/tsup)** [![GitHub stars](https://img.shields.io/github/stars/egoist/tsup?style=social&color=white)](https://github.com/egoist/tsup/stargazers)  
+    📦 *Zero-config TypeScript library bundler powered under the hood by esbuild.*  
+    Enables developers to bundle `.ts`, `.tsx`, and modern JS into dual CJS/ESM formats with automatic `.d.ts` declaration generation without writing complex configuration files.  
+    `License: MIT`
+
+17. **[Farm](https://github.com/farm-fe/farm)** [![GitHub stars](https://img.shields.io/github/stars/farm-fe/farm?style=social&color=white)](https://github.com/farm-fe/farm/stargazers)  
+    🚜 *Extremely fast Rust-based web building engine with partial bundling architecture.*  
+    Farm solves the trade-off between excessive network requests (unbundled dev servers) and heavy compilation overhead by breaking modules into fine-grained partial bundles during both development and production.  
+    `License: MIT`
+
+---
+
+### 🏛️ Historical & Discontinued Tools
+
+- **[Snowpack](https://github.com/FredKSchott/snowpack)** — Pioneered no-bundle ESM development servers; officially retired in favor of Vite.
+- **[WMR](https://github.com/preactjs/wmr)** — Preact's dedicated unbundled development server and bundler; deprecated with the Preact team officially recommending Vite.
+
+---
+
+## 🧭 Decision Matrix & Tool Selection
+
+| Use Case / Scenario | Recommended Primary Tool | Alternative / Secondary | Why This Selection? |
+| :--- | :--- | :--- | :--- |
+| **New Web Application** (React, Vue, Svelte) | **Vite** | **Bun / Parcel** | Instant HMR, rich plugin ecosystem, now backed by Rust-powered Rolldown. |
+| **Fullstack Next.js App** | **Turbopack** | **Webpack** | Built directly into Next.js with incremental compilation caching. |
+| **Publishing NPM Libraries** | **tsup / Rollup** | **Bun** | Generates cleanest ESM/CJS exports and automated TypeScript declaration types. |
+| **Large Legacy Webpack Migration** | **Rspack** | **Vite** | 5x–10x build speed acceleration with near-zero Webpack configuration rewrites. |
+| **Raw Compilation & Script Bundling** | **esbuild** | **SWC / Bun** | Instantaneous parsing and bundling speed written in Go and Zig. |
+| **Multi-Asset File Pipelines** (SVGs, Fonts) | **Gulp** | **npm scripts** | Stream-based file piping for non-JS static assets. |
+
+---
+
+## 🤝 How to Contribute
+
+Contributions are welcome! Help keep this curated list accurate and up to date:
+
+1. 🍴 **Fork the repository**.
+2. 🌿 **Create a new branch**: `git checkout -b feature/add-new-tool`.
+3. 📝 **Add or update entries**: Follow the established formatting (include links, star count badge, licensing, and specific pricing/limits for SaaS).
+4. 🚀 **Submit a Pull Request** with a concise explanation of your additions.
+
+---
+
+## ⚖️ Disclaimer & License
+
+- This repository is a **community-curated guide** intended for informational and educational purposes. Mentions do not imply commercial endorsement.
+- All product names, logos, and brands are property of their respective owners.
+- Code & content distributed under the [MIT License](LICENSE).

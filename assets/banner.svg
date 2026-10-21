@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="360" style="background: transparent; overflow: hidden; border-radius: 16px;">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="50%" stop-color="#0e172a" />
+      <stop offset="100%" stop-color="#161e38" />
+    </linearGradient>
+
+    <!-- Accent Gradient -->
+    <linearGradient id="primary-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <!-- Shimmer Gradient -->
+    <linearGradient id="shimmer" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#818cf8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#c084fc" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <!-- Border Glow Gradient -->
+    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#a855f7" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <filter id="glow-blur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="24" result="blur" />
+    </filter>
+  </defs>
+
+  <style>
+    .glow-orb-1 {
+      animation: float1 8s ease-in-out infinite alternate;
+      transform-origin: center;
+    }
+    .glow-orb-2 {
+      animation: float2 10s ease-in-out infinite alternate;
+      transform-origin: center;
+    }
+    .pulse-beam {
+      animation: beamPulse 4s ease-in-out infinite alternate;
+    }
+    .node-pulse {
+      animation: nodeBlink 3s ease-in-out infinite alternate;
+    }
+    .pipeline-dash {
+      stroke-dasharray: 8 6;
+      animation: flowDash 20s linear infinite;
+    }
+    .badge-float {
+      animation: badgeDrift 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes float1 {
+      0% { transform: translate(0px, 0px) scale(1); opacity: 0.35; }
+      100% { transform: translate(60px, 30px) scale(1.15); opacity: 0.6; }
+    }
+    @keyframes float2 {
+      0% { transform: translate(0px, 0px) scale(1); opacity: 0.3; }
+      100% { transform: translate(-50px, -25px) scale(1.2); opacity: 0.55; }
+    }
+    @keyframes beamPulse {
+      0% { opacity: 0.2; }
+      50% { opacity: 0.65; }
+      100% { opacity: 0.2; }
+    }
+    @keyframes nodeBlink {
+      0% { r: 4px; opacity: 0.4; }
+      50% { r: 6.5px; opacity: 1; }
+      100% { r: 4px; opacity: 0.4; }
+    }
+    @keyframes flowDash {
+      to { stroke-dashoffset: -200; }
+    }
+    @keyframes badgeDrift {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-4px); }
+    }
+
+    .title-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 800;
+      fill: #ffffff;
+      letter-spacing: -0.5px;
+    }
+    .subtitle-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      fill: #94a3b8;
+    }
+    .tagline-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      fill: #38bdf8;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+    .pill-label {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      fill: #e2e8f0;
+    }
+  </style>
+
+  <!-- Card Background -->
+  <rect width="1200" height="360" rx="16" fill="url(#bg-grad)" />
+  <rect width="1198" height="358" x="1" y="1" rx="15" fill="none" stroke="url(#border-grad)" stroke-width="1.5" />
+
+  <!-- Animated Ambient Glows (Background Layer) -->
+  <circle cx="200" cy="80" r="130" fill="#38bdf8" filter="url(#glow-blur)" class="glow-orb-1" />
+  <circle cx="1020" cy="270" r="160" fill="#8b5cf6" filter="url(#glow-blur)" class="glow-orb-2" />
+  <circle cx="850" cy="90" r="100" fill="#ec4899" filter="url(#glow-blur)" class="glow-orb-1" opacity="0.25" />
+
+  <!-- Subtle Animated Grid & Tech Pipeline Nodes (Background Layer) -->
+  <g opacity="0.3" class="pipeline-dash">
+    <line x1="80" y1="285" x2="1120" y2="285" stroke="#38bdf8" stroke-width="1.5" />
+    <line x1="80" y1="315" x2="1120" y2="315" stroke="#818cf8" stroke-width="1" />
+    <line x1="680" y1="40" x2="1140" y2="40" stroke="#c084fc" stroke-width="1.2" />
+    <line x1="750" y1="70" x2="1140" y2="70" stroke="#38bdf8" stroke-width="1" />
+  </g>
+
+  <!-- Glowing Pipeline Nodes -->
+  <g class="pulse-beam">
+    <circle cx="180" cy="285" r="5" fill="#38bdf8" class="node-pulse" />
+    <circle cx="450" cy="285" r="5" fill="#818cf8" class="node-pulse" />
+    <circle cx="750" cy="285" r="5" fill="#c084fc" class="node-pulse" />
+    <circle cx="1040" cy="285" r="5" fill="#38bdf8" class="node-pulse" />
+  </g>
+
+  <!-- Foreground Content: Guaranteed Never Hidden -->
+  <g id="foreground-content" transform="translate(80, 0)">
+    
+    <!-- Tagline Badge -->
+    <g transform="translate(0, 52)">
+      <rect width="210" height="28" rx="14" fill="#0369a1" fill-opacity="0.35" stroke="#38bdf8" stroke-width="1" />
+      <circle cx="16" cy="14" r="4" fill="#38bdf8" />
+      <text x="30" y="18.5" class="tagline-text">CURATED ECOSYSTEM</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="130" class="title-text" font-size="46">
+      Awesome Frontend Build Tools ⚡
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="172" class="subtitle-text" font-size="18">
+      The definitive directory of high-performance module bundlers, compilers, dev servers &amp; CI/CD platforms.
+    </text>
+
+    <!-- Highlights & Tech Feature Pills (Interactive / drifting foreground elements) -->
+    <g transform="translate(0, 206)" class="badge-float">
+      <!-- Pill 1: Vite -->
+      <g transform="translate(0, 0)">
+        <rect width="90" height="34" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.2" />
+        <text x="45" y="21.5" text-anchor="middle" class="pill-label">⚡ Vite 8</text>
+      </g>
+      <!-- Pill 2: Webpack -->
+      <g transform="translate(102, 0)">
+        <rect width="115" height="34" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.2" />
+        <text x="57" y="21.5" text-anchor="middle" class="pill-label">📦 Webpack 5</text>
+      </g>
+      <!-- Pill 3: Bun -->
+      <g transform="translate(229, 0)">
+        <rect width="85" height="34" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.2" />
+        <text x="42" y="21.5" text-anchor="middle" class="pill-label">🥟 Bun</text>
+      </g>
+      <!-- Pill 4: esbuild -->
+      <g transform="translate(326, 0)">
+        <rect width="98" height="34" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.2" />
+        <text x="49" y="21.5" text-anchor="middle" class="pill-label">🚀 esbuild</text>
+      </g>
+      <!-- Pill 5: Turbopack -->
+      <g transform="translate(436, 0)">
+        <rect width="122" height="34" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.2" />
+        <text x="61" y="21.5" text-anchor="middle" class="pill-label">🏎️ Turbopack</text>
+      </g>
+      <!-- Pill 6: Rollup -->
+      <g transform="translate(570, 0)">
+        <rect width="95" height="34" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.2" />
+        <text x="47" y="21.5" text-anchor="middle" class="pill-label">📜 Rollup</text>
+      </g>
+      <!-- Pill 7: Rspack & Rolldown -->
+      <g transform="translate(677, 0)">
+        <rect width="180" height="34" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.2" />
+        <text x="90" y="21.5" text-anchor="middle" class="pill-label">🦀 Rust: Rspack &amp; Rolldown</text>
+      </g>
+    </g>
+
+    <!-- Bottom Metric / Tagline indicators -->
+    <text x="0" y="278" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#64748b" font-weight="500">
+      🔥 Instant HMR • 🦀 Rust &amp; Go Performance • 🌐 Micro-Frontends • ☁️ Edge Pipelines
+    </text>
+  </g>
+</svg>
